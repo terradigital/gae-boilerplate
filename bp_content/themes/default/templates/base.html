@@ -46,9 +46,6 @@
                     <a class="brand" href="/">{{ app_name }}</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
-                            <li><a href="https://github.com/coto/gae-boilerplate" target="_blank">
-                                <span class="icon-inbox"></span> {% trans %}Source Code{% endtrans %}</a>
-                            </li>
                             {% if locale_iso %}
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -183,8 +180,7 @@
 
         {% block footer %}
             <footer>
-                {% trans %}Google App Engine Boilerplate is released under the{% endtrans %}
-                <a href="http://www.gnu.org/licenses/gpl-3.0.html" target="_blank">LGPL</a>
+                {{ app_name }} - 2014
             </footer>
         {% endblock %}
     </div>
