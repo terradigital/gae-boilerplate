@@ -10,7 +10,7 @@ import os
 config = {
 
     # webapp2 sessions
-    'webapp2_extras.sessions': {'secret_key': '_PUT_KEY_HERE_YOUR_SECRET_KEY_'},
+    'webapp2_extras.sessions': {'secret_key': 'uUk;,YipIr~>7LaG)8Iqv^bYW>/W^U-W+$$<28sj<g-^/N5Ni`n >,+]TiM0*>9w'},
 
     # webapp2 authentication
     'webapp2_extras.auth': {'user_model': 'bp_includes.models.User',
@@ -21,11 +21,11 @@ config = {
                               'environment_args': {'extensions': ['jinja2.ext.i18n']}},
 
     # application name
-    'app_name': "GAE Boilerplate",
+    'app_name': "Terra Digital",
 
     # the default language code for the application.
     # should match whatever language the site uses when i18n is disabled
-    'app_lang': 'en',
+    'app_lang': 'pt_BR',
 
     # Locale code = <language>_<territory> (ie 'en_US')
     # to pick locale codes see http://cldr.unicode.org/index/cldr-spec/picking-the-right-language-code
@@ -33,7 +33,7 @@ config = {
     # Language codes defined under iso 639-1 http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
     # Territory codes defined under iso 3166-1 alpha-2 http://en.wikipedia.org/wiki/ISO_3166-1
     # disable i18n if locales array is empty or None
-    'locales': ['en_US', 'es_ES', 'it_IT', 'zh_CN', 'id_ID', 'fr_FR', 'de_DE', 'ru_RU', 'pt_BR', 'cs_CZ','vi_VN','nl_NL'],
+    'locales': ['en_US', 'es_ES', 'it_IT', 'fr_FR', 'de_DE', 'pt_BR'],
 
     # contact page email settings
     'contact_sender': "SENDER_EMAIL_HERE",
@@ -41,8 +41,8 @@ config = {
 
     # Password AES Encryption Parameters
     # aes_key must be only 16 (*AES-128*), 24 (*AES-192*), or 32 (*AES-256*) bytes (characters) long.
-    'aes_key': "12_24_32_BYTES_KEY_FOR_PASSWORDS",
-    'salt': "_PUT_SALT_HERE_TO_SHA512_PASSWORDS_",
+    'aes_key': "Pe+@.1k;.@+poR1qXQm{6=j 3(9E}W!{Ll)3Y3f-#^BmlFI)a|/vY;MrSJ~f%Z4^",
+    'salt': "~B8>U5Q]a2o@ !eQ}rYG}M.7EyY>j:=^z._&|,1hPFXo6;N.aE,-ex{PH4atm>:w",
 
     # get your own consumer key and consumer secret by registering at https://dev.twitter.com/apps
     # callback url must be: http://[YOUR DOMAIN]/login/twitter/complete
@@ -87,7 +87,7 @@ config = {
 
     # Enable Federated login (OpenID and OAuth)
     # Google App Engine Settings must be set to Authentication Options: Federated Login
-    'enable_federated_login': True,
+    'enable_federated_login': False,
 
     # jinja2 base layout template
     'base_layout': 'base.html',
@@ -97,14 +97,14 @@ config = {
 
     # fellas' list
     'developers': (
-        ('Santa Klauss', 'snowypal@northpole.com'),
+        ('Vinicius Vollrath', 'vinicius@terradigital.com.br'),
     ),
 
     # If true, it will write in datastore a log of every email sent
     'log_email': True,
 
     # If true, it will write in datastore a log of every visit
-    'log_visit': True,
+    'log_visit': False,
 
     # ----> ADD MORE CONFIGURATION OPTIONS HERE <----
 

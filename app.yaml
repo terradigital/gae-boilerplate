@@ -1,5 +1,5 @@
-application: sandengine
-version: dev
+application: terradigital-api
+version: 0.2
 runtime: python27
 api_version: 1
 threadsafe: true
