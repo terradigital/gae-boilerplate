@@ -1,4 +1,4 @@
-application: terradigital-api
+application: terradigital
 version: 0.2
 runtime: python27
 api_version: 1
