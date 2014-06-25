@@ -33,7 +33,7 @@ config = {
     # Language codes defined under iso 639-1 http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
     # Territory codes defined under iso 3166-1 alpha-2 http://en.wikipedia.org/wiki/ISO_3166-1
     # disable i18n if locales array is empty or None
-    'locales': ['en_US', 'es_ES', 'it_IT', 'fr_FR', 'de_DE', 'pt_BR'],
+    # 'locales': ['en_US', 'es_ES', 'it_IT', 'fr_FR', 'de_DE', 'pt_BR'],
 
     # contact page email settings
     'contact_sender': "SENDER_EMAIL_HERE",
