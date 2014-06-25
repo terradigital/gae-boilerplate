@@ -10,7 +10,7 @@ import os
 config = {
 
     # webapp2 sessions
-    'webapp2_extras.sessions': {'secret_key': 'uUk;,YipIr~>7LaG)8Iqv^bYW>/W^U-W+$$<28sj<g-^/N5Ni`n >,+]TiM0*>9w'},
+    'webapp2_extras.sessions': {'secret_key': 'vJPuk>:ASD4}XWM[Fd|37.&lHV!g@)2:B}Oq>+K.=w/wXyQMR}qb^r9kJYAANg<C'},
 
     # webapp2 authentication
     'webapp2_extras.auth': {'user_model': 'bp_includes.models.User',
@@ -36,13 +36,13 @@ config = {
     'locales': ['en_US', 'es_ES', 'it_IT', 'fr_FR', 'de_DE', 'pt_BR'],
 
     # contact page email settings
-    'contact_sender': "SENDER_EMAIL_HERE",
-    'contact_recipient': "RECIPIENT_EMAIL_HERE",
+    'contact_sender': "vinicius@terradigital.com.br",
+    'contact_recipient': "vinicius@terradigital.com.br",
 
     # Password AES Encryption Parameters
     # aes_key must be only 16 (*AES-128*), 24 (*AES-192*), or 32 (*AES-256*) bytes (characters) long.
-    'aes_key': "Pe+@.1k;.@+poR1qXQm{6=j 3(9E}W!{Ll)3Y3f-#^BmlFI)a|/vY;MrSJ~f%Z4^",
-    'salt': "~B8>U5Q]a2o@ !eQ}rYG}M.7EyY>j:=^z._&|,1hPFXo6;N.aE,-ex{PH4atm>:w",
+    'aes_key': "3<VmTEdWT%yRE~@.Uju|x)m(=)<I][CP|{,1(Mw!Sl-QV8S#BT|-oI51uv._%}{!",
+    'salt': "~B2>U5Q]a2o@ !eQ}rYG}M.7EyY>j:=^z._&|,1hPeXo6;N.aE,-Fx{PH4atm>:w",
 
     # get your own consumer key and consumer secret by registering at https://dev.twitter.com/apps
     # callback url must be: http://[YOUR DOMAIN]/login/twitter/complete
@@ -69,12 +69,22 @@ config = {
     'github_client_secret': 'GITHUB_CLIENT_SECRET',
 
     # get your own recaptcha keys by registering at http://www.google.com/recaptcha/
-    'captcha_public_key': "CAPTCHA_PUBLIC_KEY",
-    'captcha_private_key': "CAPTCHA_PRIVATE_KEY",
+    'captcha_public_key': "6Le0v_USAAAAAMSJwR8P5i-td_VKZoVywD4ojUv_",
+    'captcha_private_key': "6Le0v_USAAAAABrRIqMKV9aX8Kf6WAkDK8xOzyiu",
 
     # Use a complete Google Analytics code, no just the Tracking ID
     # In config/boilerplate.py there is an example to fill out this value
-    'google_analytics_code': "",
+    'google_analytics_code': """
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-2238493-1', 'terradigital.com.br');
+            ga('send', 'pageview');
+        </script>
+    """,
 
     # add status codes and templates used to catch and display errors
     # if a status code is not listed here it will use the default app engine
@@ -104,7 +114,7 @@ config = {
     'log_email': True,
 
     # If true, it will write in datastore a log of every visit
-    'log_visit': False,
+    'log_visit': True,
 
     # ----> ADD MORE CONFIGURATION OPTIONS HERE <----
 
