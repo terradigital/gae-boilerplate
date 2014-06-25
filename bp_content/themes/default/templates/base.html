@@ -8,10 +8,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{% block title %}{{ app_name }}{% endblock %}</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="Somos uma empresa digital baseada na Internet. Nosso foco é infraestrutura e sistemas para Internet.">
+    <meta name="author" content="Vinicius Vollrath">
+    <meta name="keywords" content="Segurança Digital, Redes, Sistemas Operacionais, Linux, Open Source, eHealth, mHealth, Google Apps, Google Drive, AWS, Amazon">
     <meta name="generator" content="Google App Engine Boilerplate 3.0">
+    <meta property="og:site_name" content="{{ app_name }}">
+    <meta property="og:type" content="website">
+    
 
     <!-- Mobile viewport optimized: h5bp.com/viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,90 +45,7 @@
                     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-chevron-down icon"></span>
                     </button>
-                    <a class="brand" href="/">{{ app_name }}</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav pull-right">
-                            {% if locale_iso %}
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <span class="icon-globe"></span>
-                                        {% trans %}Language{% endtrans %} : {{ locale_language }} <b class="caret"></b>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        {% for l in locales %}
-                                            {% if locale_iso != l %}
-                                                <li><a href="{{ path_for_language }}&hl={{ l }}">{{ locales[l] }}</a></li>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </ul>
-                                </li>
-                            {% endif %}
-                            {% if user_id %}
-                                <li class="divider-vertical"></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">@{{ username }}<b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="{{ uri_for("edit-profile") }}">{% trans %}Edit Profile{% endtrans %}</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="{{ logout_url }}">{% trans %}Logout{% endtrans %}</a></li>
-                                    </ul>
-                                </li>
-                            {% elif path != "/" and path != "/login/" %}
-                                <li class="divider-vertical"></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        {% trans %}Login{% endtrans %} <b class="caret"></b>
-                                    </a>
-
-                                    <div class="dropdown-menu well">
-                                        <form id="form_login_user" action="{{ uri_for("login") }}" method="post"
-                                              class="auth-at-dropdown">
-                                            <fieldset>
-                                                <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
-
-                                                <div class="control-group">
-                                                    <label class="control-label" for="l_username">
-                                                        {% trans %}Username or Email{% endtrans %}:
-                                                    </label>
-                                                    <div class="controls">
-                                                        <input class="input-xlarge focused required" id="l_username"
-                                                               name="username" type="text" value="">
-                                                    </div>
-                                                </div>
-                                                <div class="control-group">
-                                                    <label class="control-label" for="l_password">
-                                                        {% trans %}Password{% endtrans %}:
-                                                    </label>
-                                                    <div class="controls">
-                                                        <input class="input-xlarge focused required" id="l_password"
-                                                               name="password" type="password" value="">
-                                                    </div>
-                                                </div>
-                                                <div class="control-group row-fluid">
-                                                    <label class="checkbox span7">
-                                                        <input type="checkbox" name="remember_me" id="remember_me"
-                                                               value="on">
-                                                        {% trans %}Remember me?{% endtrans %}
-                                                    </label>
-
-                                                    <div class="span5">
-                                                        <button type="submit" class="btn btn-primary btn-small btn-login">
-                                                            {% trans %}Login{% endtrans %}</button>
-                                                    </div>
-                                                </div>
-                                                <div class="control-group">
-                                                    <a href="{{ uri_for("password-reset") }}">
-                                                        {% trans %}Forgot your password?{% endtrans %}</a>
-                                                </div>
-                                                {{ macros.federated_login(provider_info, provider_uris, enable_federated_login) }}
-                                            </fieldset>
-                                        </form>
-                                    </div>
-                                </li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                    <!-- /.nav-collapse -->
+                    <a class="brand" title="{{ app_name }}" href="/"><img src="/{{ theme }}/img/logo.png" alt="{{ app_name }}"></a>
                 </div>
                 <!-- /container -->
             </div>
@@ -134,31 +54,6 @@
     {% endblock %}
 
     <div id="content" class="container xled">
-        {% block header %}
-            <header class="navbar" id="overview">
-                {% block header_title_lead %}
-                    <h1>{% block header_title %}{{ app_name }}{% endblock %}</h1>
-                {% endblock %}
-                {% block subnavbar %}
-                    <div class="subnav">
-                        <ul>
-                            <li{% if path == uri_for("contact") %} class="active"{% endif %}>
-                                <a href="{{ uri_for("contact") }}">{% trans %}Contact{% endtrans %}</a>
-                            </li>
-                            {% if not user_id %}
-                                <li{% if path == uri_for("register") %} class="active"{% endif %}>
-                                    <a href="{{ uri_for("register") }}">{% trans %}Sign Up{% endtrans %}</a>
-                                </li>
-                                <li{% if path == uri_for("password-reset") %} class="active"{% endif %}>
-                                    <a href="{{ uri_for("password-reset") }}">{% trans %}Forgot your password?{% endtrans %}</a>
-                                </li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                {% endblock %}
-            </header>
-        {% endblock %}
-
         {% if messages|safe %}
             {% for message in messages %}
                 <p class="alert alert-{{ message[1]|safe }}">
